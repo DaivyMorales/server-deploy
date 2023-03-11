@@ -12,5 +12,10 @@
       "dest": "/"
     },
     { "src": "/api/car", "dest": "/car" }
-  ]
+  ],
+  "functions": {
+    "api/*": {
+      "timeout": 60
+    }
+  }
 }
