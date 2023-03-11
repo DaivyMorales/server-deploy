@@ -24,7 +24,7 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.send("Your deploy has been sucess! 💪🏼");
+  res.send("HOME ROUTE");
 });
 
 app.get("/car", async (req, res) => {
