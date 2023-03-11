@@ -12,10 +12,13 @@ app.use(express.json());
 app.listen(PORT);
 
 mongoose
-  .connect(process.env.MONGOURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://daivymorales:P4VnUFlzH2dbi5gP@mern-vercel.nax9u9b.mongodb.net/test",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("MongoDB connected");
   })
@@ -28,12 +31,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/product", (req, res) => {
-    res.send("HOME ROUTE");
-  });
+  res.send("HOME ROUTE");
+});
 
 app.get("/car", async (req, res) => {
   const carFound = await Car.find();
-  res.json(carFound)
+  res.json(carFound);
 });
 
 app.post("/car", async (req, res) => {
