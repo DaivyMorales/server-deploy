@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
   res.send("HOME ROUTE");
 });
 
+app.get("/product", (req, res) => {
+    res.send("HOME ROUTE");
+  });
+
 app.get("/car", async (req, res) => {
   const carFound = await Car.find();
   res.json(carFound)
