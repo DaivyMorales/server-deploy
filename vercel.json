@@ -14,7 +14,7 @@
     { "src": "/car", "dest": "/" }
   ],
   "functions": {
-    "api/*": {
+    "car/*": {
       "timeout": 59
     }
   }
