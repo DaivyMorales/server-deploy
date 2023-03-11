@@ -34,22 +34,23 @@ app.get("/product", (req, res) => {
   res.send("HOME ROUTE");
 });
 
-app.get("/car", async (req, res) => {
-  const carFound = await Car.find();
-  res.json(carFound);
-});
-
-app.post("/car", async (req, res) => {
-  const { model, brand, color } = req.body;
-  const newCar = new Car({
-    model,
-    brand,
-    color,
+app.get("/api/car", async (req, res) => {
+    const carFound = await Car.find();
+    res.json(carFound);
   });
-
-  const carSaved = await newCar.save();
-
-  res.status(200).json(carSaved);
-});
+  
+  app.post("/api/car", async (req, res) => {
+    const { model, brand, color } = req.body;
+    const newCar = new Car({
+      model,
+      brand,
+      color,
+    });
+  
+    const carSaved = await newCar.save();
+  
+    res.status(200).json(carSaved);
+  });
+  
 
 console.log(`This server is running on port ${PORT}`);
